@@ -1,0 +1,246 @@
+/* =========================================================
+   cabecera.css — barra superior, logo, navegación,
+   menú de usuario y carrito desplegable
+   ========================================================= */
+
+#barra-superior {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 12px 24px;
+  background: rgba(19, 26, 46, 0.96);
+  border-bottom: 1px solid var(--borde);
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo strong {
+  color: var(--acento);
+}
+
+.logo-binario {
+  font-family: Consolas, monospace;
+  font-size: 12px;
+  background: var(--acento);
+  color: #06210f;
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+#nav-principal {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+#nav-principal a {
+  background: transparent;
+  border: none;
+  color: var(--texto-secundario);
+  font-size: 14px;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+
+#nav-principal a:hover {
+  background: var(--superficie-2);
+  color: var(--texto);
+}
+
+#nav-principal a.activo {
+  background: var(--superficie-2);
+  color: var(--acento);
+  font-weight: 600;
+}
+
+#area-usuario {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu-usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#etiqueta-usuario {
+  font-size: 13px;
+  color: var(--texto-secundario);
+}
+
+/* ---------- Carrito desplegable ---------- */
+
+.carrito-contenedor {
+  position: relative;
+}
+
+.btn-icono {
+  position: relative;
+  padding: 9px 12px;
+}
+
+.insignia-contador {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--acento);
+  color: #06210f;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+#desplegable-carrito {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 360px;
+  max-height: 480px;
+  overflow-y: auto;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 16px;
+  z-index: 60;
+}
+
+#desplegable-carrito h4 {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.carrito-vacio {
+  color: var(--texto-secundario);
+  font-size: 14px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.item-carrito {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--borde);
+  align-items: center;
+}
+
+.item-carrito img {
+  width: 56px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-titulo {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-precio {
+  font-size: 12px;
+  color: var(--texto-secundario);
+}
+
+.item-controles {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.item-controles button {
+  background: var(--superficie-2);
+  border: 1px solid var(--borde);
+  color: var(--texto);
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.item-controles button:hover {
+  border-color: var(--acento);
+}
+
+.item-controles .btn-quitar {
+  width: auto;
+  padding: 0 8px;
+  font-size: 11px;
+  color: var(--peligro);
+}
+
+.item-subtotal {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--acento);
+}
+
+.carrito-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  font-size: 15px;
+}
+
+#pie-carrito .btn {
+  margin-top: 4px;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 860px) {
+  #area-usuario {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 520px) {
+  #desplegable-carrito {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    top: 120px;
+  }
+}

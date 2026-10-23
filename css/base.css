@@ -1,0 +1,175 @@
+/* =========================================================
+   base.css — variables, reset, tipografía, botones,
+   formularios y utilidades generales
+   ========================================================= */
+
+:root {
+  --fondo: #0b1020;
+  --superficie: #131a2e;
+  --superficie-2: #1a2340;
+  --borde: #263252;
+  --texto: #e5e9f2;
+  --texto-secundario: #94a3c7;
+  --acento: #22c55e;
+  --acento-oscuro: #16a34a;
+  --azul: #3b82f6;
+  --peligro: #ef4444;
+  --radio: 12px;
+  --sombra: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 24px;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* ---------- Botones ---------- */
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: filter 0.15s, background 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primario {
+  background: var(--acento);
+  color: #06210f;
+  font-weight: 600;
+}
+
+.btn-primario:hover:not(:disabled) {
+  background: var(--acento-oscuro);
+}
+
+.btn-secundario {
+  background: var(--superficie-2);
+  color: var(--texto);
+  border: 1px solid var(--borde);
+}
+
+.btn-secundario:hover:not(:disabled) {
+  border-color: var(--acento);
+}
+
+.btn-peligro {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--peligro);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.btn-peligro:hover:not(:disabled) {
+  background: var(--peligro);
+  color: #fff;
+}
+
+.btn-bloque {
+  width: 100%;
+}
+
+.btn-mini {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* ---------- Formularios ---------- */
+
+form label {
+  display: block;
+  font-size: 13px;
+  color: var(--texto-secundario);
+  margin-bottom: 14px;
+}
+
+form input,
+form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  background: var(--superficie-2);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  color: var(--texto);
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--acento);
+}
+
+form input[type="file"] {
+  padding: 8px;
+}
+
+.form-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ---------- Tarjetas y utilidades ---------- */
+
+.tarjeta {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 22px;
+}
+
+.vacio {
+  color: var(--texto-secundario);
+  padding: 24px;
+  text-align: center;
+}
+
+/* ---------- Pie ---------- */
+
+footer {
+  text-align: center;
+  padding: 18px;
+  font-size: 12px;
+  color: var(--texto-secundario);
+  border-top: 1px solid var(--borde);
+  font-family: Consolas, monospace;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 520px) {
+  .form-fila {
+    grid-template-columns: 1fr;
+  }
+}

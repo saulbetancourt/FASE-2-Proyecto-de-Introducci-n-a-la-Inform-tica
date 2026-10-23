@@ -1,0 +1,107 @@
+/* =========================================================
+   catalogo.css — rejilla de productos y tarjetas
+   ========================================================= */
+
+.encabezado-vista {
+  margin-bottom: 22px;
+}
+
+.encabezado-vista h2 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.encabezado-vista p {
+  color: var(--texto-secundario);
+  font-size: 14px;
+}
+
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-producto {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-imagen {
+  position: relative;
+}
+
+.producto-imagen img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.insignia {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.insignia-disponible {
+  background: rgba(34, 197, 94, 0.9);
+  color: #06210f;
+}
+
+.insignia-agotado {
+  background: rgba(239, 68, 68, 0.9);
+  color: #fff;
+}
+
+.producto-cuerpo {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.producto-cuerpo h3 {
+  font-size: 16px;
+}
+
+.producto-descripcion {
+  font-size: 13px;
+  color: var(--texto-secundario);
+  flex: 1;
+}
+
+.producto-meta {
+  font-size: 12px;
+  color: var(--texto-secundario);
+}
+
+.producto-precio {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--acento);
+}
+
+.producto-acciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.producto-acciones .btn {
+  padding: 9px 8px;
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .producto-acciones {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,117 @@
+/* =========================================================
+   paneles.css — panel de vendedor, panel de administrador
+   e historiales de compras/ventas
+   ========================================================= */
+
+/* ---------- Panel de vendedor ---------- */
+
+.panel-dos-columnas {
+  display: grid;
+  grid-template-columns: minmax(300px, 420px) 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.panel-dos-columnas h3 {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+#vista-previa-imagen img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  border: 1px solid var(--borde);
+}
+
+.fila-mi-producto {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.fila-mi-producto:last-child {
+  border-bottom: none;
+}
+
+.fila-mi-producto img {
+  width: 64px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.fila-mi-producto .btn {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ---------- Panel de administrador ---------- */
+
+.pestanas-panel {
+  max-width: 420px;
+  margin-bottom: 18px;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+/* ---------- Historiales ---------- */
+
+.lista-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tarjeta-compra {
+  padding: 18px;
+}
+
+.compra-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.compra-fecha {
+  display: block;
+  font-size: 12px;
+  color: var(--texto-secundario);
+  margin-top: 2px;
+}
+
+.compra-items {
+  list-style: none;
+  font-size: 13px;
+  color: var(--texto-secundario);
+  margin-bottom: 12px;
+}
+
+.compra-items li {
+  padding: 3px 0;
+}
+
+.compra-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 860px) {
+  .panel-dos-columnas {
+    grid-template-columns: 1fr;
+  }
+}

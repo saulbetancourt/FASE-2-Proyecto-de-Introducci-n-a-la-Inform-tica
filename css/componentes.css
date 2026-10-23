@@ -1,0 +1,245 @@
+/* =========================================================
+   componentes.css — pestañas, tablas, insignias de rol,
+   modal, comprobante, spinner y notificaciones
+   ========================================================= */
+
+/* ---------- Pestañas ---------- */
+
+.pestanas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.pestanas button {
+  flex: 1;
+  background: var(--superficie-2);
+  border: 1px solid var(--borde);
+  color: var(--texto-secundario);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pestanas button.activo {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: #06210f;
+  font-weight: 600;
+}
+
+/* ---------- Tablas ----------
+   table-layout: fixed evita que contenido largo (correos)
+   desborde la tarjeta contenedora */
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 13px;
+}
+
+.tabla-contenedor .tabla {
+  min-width: 760px;
+}
+
+.tabla th,
+.tabla td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--borde);
+  overflow-wrap: anywhere;
+}
+
+.tabla th {
+  color: var(--texto-secundario);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tabla td {
+  color: var(--texto);
+}
+
+.miniatura {
+  width: 48px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ---------- Insignias de rol y estado ---------- */
+
+.insignia-rol {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.insignia-comprador {
+  background: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+}
+
+.insignia-vendedor {
+  background: rgba(34, 197, 94, 0.18);
+  color: #86efac;
+}
+
+.insignia-admin {
+  background: rgba(168, 85, 247, 0.18);
+  color: #d8b4fe;
+}
+
+.insignia-aprobado {
+  background: rgba(34, 197, 94, 0.18);
+  color: #86efac;
+}
+
+.insignia-rechazado {
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
+}
+
+/* ---------- Modal ---------- */
+
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 18, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: 86vh;
+  overflow-y: auto;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: var(--texto-secundario);
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-cerrar:hover {
+  color: var(--texto);
+}
+
+.pago-centrado {
+  text-align: center;
+  padding: 8px 4px;
+}
+
+.pago-centrado h3 {
+  margin-bottom: 8px;
+}
+
+.pago-centrado p {
+  color: var(--texto-secundario);
+  font-size: 14px;
+}
+
+.pago-monto {
+  font-size: 22px !important;
+  font-weight: 700;
+  color: var(--acento) !important;
+  margin-top: 8px;
+}
+
+.titulo-exito {
+  color: var(--acento);
+}
+
+.titulo-error {
+  color: var(--peligro);
+}
+
+.comprobante {
+  text-align: left;
+  background: #060b18;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #a7f3c7;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* ---------- Spinner ---------- */
+
+.spinner {
+  width: 46px;
+  height: 46px;
+  border: 4px solid rgba(255, 255, 255, 0.12);
+  border-top-color: var(--acento);
+  border-radius: 50%;
+  animation: girar 0.9s linear infinite;
+  margin: 10px auto 18px;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Notificaciones ---------- */
+
+#contenedor-toasts {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+}
+
+.toast {
+  background: var(--superficie-2);
+  border: 1px solid var(--acento);
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 14px;
+  max-width: 340px;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.3s, transform 0.3s;
+  box-shadow: var(--sombra);
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast-exito {
+  border-color: var(--acento);
+}
+
+.toast-error {
+  border-color: var(--peligro);
+  color: #fecaca;
+}

@@ -1,0 +1,32 @@
+/* =========================================================
+   auth.css — página de inicio de sesión y registro
+   ========================================================= */
+
+.auth-columnas {
+  display: grid;
+  grid-template-columns: minmax(320px, 480px) minmax(280px, 420px);
+  gap: 24px;
+  justify-content: center;
+  align-items: start;
+  margin-top: 4vh;
+}
+
+.credenciales-demo {
+  overflow: hidden;
+}
+
+.credenciales-demo h3 {
+  margin-bottom: 8px;
+}
+
+.credenciales-demo p {
+  font-size: 13px;
+  color: var(--texto-secundario);
+  margin-bottom: 14px;
+}
+
+@media (max-width: 860px) {
+  .auth-columnas {
+    grid-template-columns: 1fr;
+  }
+}

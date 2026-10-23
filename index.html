@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BinaryShop — Iniciar sesión</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/cabecera.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+  <header id="barra-superior">
+    <a class="logo" href="index.html">
+      <span class="logo-binario">01</span>
+      Binary<strong>Shop</strong>
+    </a>
+  </header>
+
+  <main>
+    <section class="auth-columnas">
+      <div class="tarjeta">
+        <div class="pestanas">
+          <button type="button" id="pestana-login" class="activo">Iniciar sesión</button>
+          <button type="button" id="pestana-registro">Registrarse</button>
+        </div>
+
+        <form id="form-login" novalidate>
+          <label>
+            Correo o nickname
+            <input type="text" id="login-identificador" autocomplete="username" required>
+          </label>
+          <label>
+            Contraseña
+            <input type="password" id="login-password" autocomplete="current-password" required>
+          </label>
+          <button type="submit" class="btn btn-primario btn-bloque">Ingresar</button>
+        </form>
+
+        <form id="form-registro" class="oculto" novalidate>
+          <div class="form-fila">
+            <label>
+              Nombre
+              <input type="text" id="reg-nombre" required>
+            </label>
+            <label>
+              Apellido
+              <input type="text" id="reg-apellido">
+            </label>
+          </div>
+          <div class="form-fila">
+            <label>
+              Nickname
+              <input type="text" id="reg-nickname" required>
+            </label>
+            <label>
+              Correo
+              <input type="email" id="reg-correo" required>
+            </label>
+          </div>
+          <label>
+            Contraseña
+            <input type="password" id="reg-password" autocomplete="new-password" required>
+          </label>
+          <div class="form-fila">
+            <label>
+              Dirección
+              <input type="text" id="reg-direccion">
+            </label>
+            <label>
+              Datos bancarios (n° de tarjeta)
+              <input type="text" id="reg-bancarios" placeholder="0000 0000 0000 0000">
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primario btn-bloque">Crear cuenta</button>
+        </form>
+      </div>
+
+      <aside class="tarjeta credenciales-demo">
+        <h3>Cuentas de demostración</h3>
+        <p>Las credenciales están predefinidas en el código fuente (no hay base de datos real).</p>
+        <table class="tabla">
+          <thead>
+            <tr><th>Rol</th><th>Correo</th><th>Contraseña</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Comprador</td><td>comprador@binaryshop.com</td><td>compra123</td></tr>
+            <tr><td>Vendedor</td><td>vendedor@binaryshop.com</td><td>venta123</td></tr>
+            <tr><td>Administrador</td><td>admin@binaryshop.com</td><td>admin123</td></tr>
+          </tbody>
+        </table>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    BinaryShop · Desarrollado con HTML5, CSS3 y JavaScript · 01010100 01101001 01100101 01101110 01100100 01100001
+  </footer>
+
+  <div id="contenedor-toasts"></div>
+
+  <script src="js/modelos/usuario.js"></script>
+  <script src="js/modelos/producto.js"></script>
+  <script src="js/modelos/carrito.js"></script>
+  <script src="js/modelos/compra.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/nucleo/tienda.js"></script>
+  <script src="js/nucleo/autenticador.js"></script>
+  <script src="js/nucleo/controlador-usuario.js"></script>
+  <script src="js/ui/utilidades.js"></script>
+  <script src="js/ui/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BinaryShop — Catálogo</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/cabecera.css">
+  <link rel="stylesheet" href="css/catalogo.css">
+  <link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+  <header id="barra-superior">
+    <a class="logo" href="catalogo.html">
+      <span class="logo-binario">01</span>
+      Binary<strong>Shop</strong>
+    </a>
+
+    <nav id="nav-principal">
+      <a href="catalogo.html" id="enlace-catalogo" class="activo">Catálogo</a>
+      <a href="vendedor.html" id="enlace-vendedor" class="oculto">Panel de vendedor</a>
+      <a href="ventas.html" id="enlace-ventas" class="oculto">Historial de ventas</a>
+      <a href="compras.html" id="enlace-compras" class="oculto">Mis compras</a>
+      <a href="admin.html" id="enlace-admin" class="oculto">Panel de administrador</a>
+    </nav>
+
+    <div id="area-usuario">
+      <div class="carrito-contenedor">
+        <button type="button" id="btn-carrito" class="btn btn-icono" aria-label="Abrir carrito">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1.5"></circle>
+            <circle cx="18" cy="21" r="1.5"></circle>
+            <path d="M2.5 3h2l2.4 12.4a1.5 1.5 0 0 0 1.5 1.2h8.4a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"></path>
+          </svg>
+          <span id="contador-carrito" class="insignia-contador">0</span>
+        </button>
+        <div id="desplegable-carrito" class="oculto">
+          <h4>Tu carrito</h4>
+          <div id="lista-carrito"></div>
+          <div id="pie-carrito"></div>
+        </div>
+      </div>
+      <div class="menu-usuario">
+        <span id="etiqueta-usuario"></span>
+        <button type="button" id="btn-habilitar-venta" class="btn btn-secundario btn-mini oculto">
+          Habilitar opción de venta
+        </button>
+        <button type="button" id="btn-cerrar-sesion" class="btn btn-peligro btn-mini">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="encabezado-vista">
+      <h2>Catálogo de productos</h2>
+      <p>Explora los productos disponibles y añádelos a tu carrito o compra de inmediato.</p>
+    </div>
+    <div id="rejilla-productos" class="rejilla"></div>
+  </main>
+
+  <footer>
+    BinaryShop · Desarrollado con HTML5, CSS3 y JavaScript · 01010100 01101001 01100101 01101110 01100100 01100001
+  </footer>
+
+  <div id="modal" class="modal-fondo oculto">
+    <div class="modal tarjeta">
+      <button type="button" id="btn-cerrar-modal" class="modal-cerrar" aria-label="Cerrar">&times;</button>
+      <div id="contenido-modal"></div>
+    </div>
+  </div>
+
+  <div id="contenedor-toasts"></div>
+
+  <script src="js/modelos/usuario.js"></script>
+  <script src="js/modelos/producto.js"></script>
+  <script src="js/modelos/carrito.js"></script>
+  <script src="js/modelos/compra.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/nucleo/tienda.js"></script>
+  <script src="js/nucleo/autenticador.js"></script>
+  <script src="js/nucleo/controlador-usuario.js"></script>
+  <script src="js/nucleo/controlador-producto.js"></script>
+  <script src="js/nucleo/pasarela-pagos.js"></script>
+  <script src="js/nucleo/controlador-compra.js"></script>
+  <script src="js/ui/utilidades.js"></script>
+  <script src="js/ui/compartido.js"></script>
+  <script src="js/ui/catalogo.js"></script>
+</body>
+</html>
